@@ -33,7 +33,7 @@ def signin(request):
 
     try:
         user = UserModel.objects.get(email=username)
-        if user.checck_password(password):
+        if user.check_password(password):
             usr_dict = UserModel.objects.filter(email=username).values().first()
             usr_dict.pop('password')
 
